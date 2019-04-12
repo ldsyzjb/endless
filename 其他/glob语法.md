@@ -2,6 +2,14 @@ npm：https://www.npmjs.com/package/glob
 wiki： https://en.wikipedia.org/wiki/Glob_(programming)  
 一般用于linux中sheel命令进行路径匹配，后续被大部分语言实现，例如nodejs，go，python等等
 
+目录：  
+[1.基本通配符](#1基本通配符)  
+[2.可拓展的模式(brace expansion)](#2可拓展的模式(brace-expansion))  
+[3.多层路径匹配（**）](#3多层路径匹配（**）)  
+[4.小括号匹配](#4小括号匹配)  
+[5.注意](#5注意) 
+
+
 ### 1.基本通配符
 `*?[]` 这三个通配符是最基本的通配符，其他的则有可能没有被其他语言实现；
 
@@ -96,3 +104,5 @@ file/.one.jpg
 应该写为
 file/.*.jpg
 ```
+
+
