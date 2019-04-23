@@ -20,8 +20,8 @@ Object.defineProperty(window, 'lol', new (function(){
 
     Object.defineProperty(prototype, 'getItem', {
         value: function getItem(){
-            var key = arguments[0];
             if(arguments.length < 1) throw new TypeError('getItem')
+            var key = arguments[0].toString();
             return local[key] ? local[key] : null;
         },
         writable: false,
@@ -31,10 +31,11 @@ Object.defineProperty(window, 'lol', new (function(){
     Object.defineProperty(prototype, 'setItem', {
         value: function setItem(){
             if(arguments.length < 2) throw new TypeError('setItem')
-            var key = arguments[0];
-            var value = arguments[1]
+            var key = arguments[0].toString();
+            var value = arguments[1].toString();
             local[key] = value;
             local.length += 1;
+            List.push(key)
             document.cookie = escape(key) + '=' + escape(value) +'; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/'
         },
         writable: false,
@@ -44,9 +45,10 @@ Object.defineProperty(window, 'lol', new (function(){
     Object.defineProperty(prototype, 'removeItem', {
         value: function removeItem(){
             if(arguments.length < 1) throw new TypeError('removeItem')
-            var key = arguments[0]
+            var key = arguments[0].toString();
             delete local[key];
             local.length -= 1;
+            List.splice(List.indexOf(key));
             document.cookie = escape(key) + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
         },
         writable: false,
