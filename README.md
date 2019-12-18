@@ -6,6 +6,6 @@
 ### Linux
 [the art of command line](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 
-[快乐的 Linux](https://github.com/billie66/TLCL)
+[快乐的 Linux　命令行](https://github.com/billie66/TLCL)
 
 [arch linux](https://wiki.archlinux.org/index.php/Installation_guide)
